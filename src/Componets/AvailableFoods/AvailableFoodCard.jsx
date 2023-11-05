@@ -1,5 +1,8 @@
+import { Link } from "react-router-dom";
+
 const AvailableFoodCard = ({ availableFood }) => {
   const {
+    _id,
     img,
     userEmail,
     userName,
@@ -43,9 +46,11 @@ const AvailableFoodCard = ({ availableFood }) => {
         <p>location: {location}</p>
 
         <div className=" w-full  pt-10">
-          <button className="bg-[#ffc933] w-full py-3 rounded-lg text-xl font-semibold text-white">
-            Details
-          </button>
+          <Link to={`/availableFoods/${_id}`}>
+            <button className="bg-[#ffc933] w-full py-3 rounded-lg text-xl font-semibold text-white">
+              Details
+            </button>
+          </Link>
         </div>
       </div>
     </div>

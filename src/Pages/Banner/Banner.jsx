@@ -13,10 +13,7 @@ const Banner = () => {
             Partner Agency programs and sites.
           </p>
 
-          <button
-            className="px-8 py-2 mt-3 text-sm font-medium text-white bg-[#0CB14B] border border-[#0CB14B] rounded active:text-[#0CB14B] hover:bg-transparent hover:text-[#0CB14B] focus:outline-none"
-            href="/download"
-          >
+          <button className="px-8 py-2 mt-3 text-sm font-medium text-white bg-[#0CB14B] border border-[#0CB14B] rounded active:text-[#0CB14B] hover:bg-transparent hover:text-[#0CB14B] focus:outline-none">
             Get Help
           </button>
         </div>

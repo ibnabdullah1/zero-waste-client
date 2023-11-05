@@ -1,20 +1,18 @@
-import { useContext } from "react";
-import { AuthContext } from "../../Provider/AuthProvider";
 import axios from "axios";
 import Swal from "sweetalert2";
+import auth from "../../Firebase/firebase.config";
 
 const AddFood = () => {
-  const { user } = useContext(AuthContext);
-  const userEmail = user.email;
-  const userName = user.displayName;
-  const userImage = user.photoURL;
+  const { user } = auth();
+  const userEmail = user?.email;
+  const userName = user?.displayName;
+  const userImage = user?.photoURL;
   const handleAddFood = (e) => {
     e.preventDefault();
     const form = e.target;
     const img = form.img.value;
     const Food_Name = form.Food_name.value;
     const Quantity = form.food_quantity.value;
-    console.log(Quantity);
     const location = form.location.value;
     const Expired_Date = form.Expired_Date.value;
     const Additional_Notes = form.Additional_Notes.value;
