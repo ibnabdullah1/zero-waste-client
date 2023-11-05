@@ -21,13 +21,15 @@ const Foods = () => {
             <FoodsCard key={Food._id} Food={Food} />
           ))}
       </div>
-      <div className="text-center mt-10">
-        <Link to="/availableFoods">
-          <button className="bg-[#ffc933] px-7 py-3 rounded-lg text-xl font-semibold text-white">
-            See all
-          </button>
-        </Link>
-      </div>
+      {Foods.length > 0 && (
+        <div className="text-center mt-10">
+          <Link to="/availableFoods">
+            <button className="bg-[#ffc933] px-7 py-3 rounded-lg text-xl font-semibold text-white">
+              See all
+            </button>
+          </Link>
+        </div>
+      )}
     </div>
   );
 };

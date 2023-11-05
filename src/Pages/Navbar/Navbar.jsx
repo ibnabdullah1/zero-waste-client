@@ -6,6 +6,7 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const { user, logout } = useContext(AuthContext);
+
   const handleLogOut = () => {
     logout();
     navigate("/");
@@ -156,11 +157,11 @@ const Navbar = () => {
             <div className="w-10 rounded-full">
               <img
                 src={
-                  user.photoURL
-                    ? user.photoURL
+                  user?.photoURL
+                    ? user?.photoURL
                     : "https://www.svgrepo.com/show/525577/user-circle.svg"
                 }
-                alt={user.displayName}
+                alt={user?.displayName}
               />
             </div>
           </label>
@@ -170,7 +171,7 @@ const Navbar = () => {
           >
             <li>
               <button className="btn btn-sm  btn-ghost">
-                {user.displayName ? user.displayName : "Unknown user"}
+                {user?.displayName ? user.displayName : "Unknown user"}
               </button>
             </li>
 

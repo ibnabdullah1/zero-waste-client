@@ -1,9 +1,11 @@
 import axios from "axios";
 import Swal from "sweetalert2";
 import auth from "../../Firebase/firebase.config";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const AddFood = () => {
-  const { user } = auth();
+  const { user } = useContext(AuthContext);
   const userEmail = user?.email;
   const userName = user?.displayName;
   const userImage = user?.photoURL;

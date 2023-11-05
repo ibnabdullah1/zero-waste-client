@@ -1,4 +1,8 @@
 import { useLoaderData } from "react-router-dom";
+import { BsCalendar2Date } from "react-icons/bs";
+import { AiOutlineUserAdd } from "react-icons/ai";
+import { BiCurrentLocation } from "react-icons/bi";
+import { MdProductionQuantityLimits } from "react-icons/md";
 
 const FoodDetails = () => {
   const food = useLoaderData();
@@ -35,19 +39,38 @@ const FoodDetails = () => {
   //   request collection
 
   return (
-    <div className="flex">
-      <div>
-        <img src={img} alt={Food_Name} />
-      </div>
-      <div>
-        <h2>{Food_Name}</h2>
-        <h2>Quantity: {Quantity}</h2>
-        <h2>Donator: {userName}</h2>
-        <p>Expired Date: {Expired_Date}</p>
-        <p>location: {location} </p>
-        <button className="px-8 py-2 mt-3 text-sm font-medium text-white bg-[#0CB14B] border border-[#0CB14B] rounded active:text-[#0CB14B] hover:bg-transparent hover:text-[#0CB14B] focus:outline-none">
-          Request
-        </button>
+    <div className="min-h-[80vh] flex justify-center py-20 items-center">
+      <div className="flex gap-8 justify-center items-center">
+        <div>
+          <img className="rounded-md" src={img} alt={Food_Name} />
+        </div>
+        <div>
+          <h2 className="text-2xl my-2 font-bold">{Food_Name}</h2>
+          <h2 className="flex text-lg items-center gap-2  mt-1">
+            <MdProductionQuantityLimits />
+            <span className="font-semibold">Quantity:</span>
+            {Quantity}
+          </h2>
+          <h2 className="flex text-lg items-center gap-2 mt-1">
+            <AiOutlineUserAdd />
+            <span className="font-semibold">Donator:</span>
+            {userName}
+          </h2>
+          <h2 className="flex text-lg items-center gap-2 mt-1">
+            <BsCalendar2Date />
+            <span className="font-semibold">Expired Date:</span>
+            {Expired_Date}
+          </h2>
+          <h2 className="flex text-lg items-center gap-2 mt-1">
+            <BiCurrentLocation />
+            <span className="font-semibold">location:</span>
+            {location}
+          </h2>
+
+          <button className="px-8 py-2 mt-3 text-sm font-medium text-white bg-[#0CB14B] border border-[#0CB14B] rounded active:text-[#0CB14B] hover:bg-transparent hover:text-[#0CB14B] focus:outline-none">
+            Request
+          </button>
+        </div>
       </div>
     </div>
   );
