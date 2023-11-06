@@ -10,6 +10,7 @@ import {
 import PropTypes from "prop-types";
 import { createContext, useEffect, useState } from "react";
 import auth from "../Firebase/firebase.config";
+import axios from "axios";
 export const AuthContext = createContext({});
 
 const googleProvider = new GoogleAuthProvider();
@@ -53,6 +54,16 @@ const AuthProvider = ({ children }) => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       setLoading(false);
+      if (currentUser) {
+        const loggedInUser = { email: currentUser.email };
+        axios
+          .post("http://localhost:5000/jwt", loggedInUser, {
+            withCredentials: true,
+          })
+          .then((res) => {
+            console.log("Token response", res.data);
+          });
+      }
     });
     return () => {
       unSubscribe();
