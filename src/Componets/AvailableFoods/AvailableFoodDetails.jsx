@@ -73,9 +73,9 @@ const AvailableFoodDetails = () => {
 
   return (
     <div className="min-h-[80vh] flex justify-center py-20 items-center">
-      <div className="flex gap-8 justify-center items-center">
+      <div className="flex gap-8 justify-center ">
         <div>
-          <img className="rounded-md" src={img} alt={Food_Name} />
+          <img className="rounded-md lg:w-[600px]" src={img} alt={Food_Name} />
         </div>
         <div>
           <h2 className="text-2xl my-2 font-bold">{Food_Name}</h2>

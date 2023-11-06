@@ -1,12 +1,17 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { BsCalendar2Date } from "react-icons/bs";
 import { AiOutlineUserAdd } from "react-icons/ai";
 import { BiCurrentLocation } from "react-icons/bi";
 import { MdProductionQuantityLimits } from "react-icons/md";
-
+import toast from "react-hot-toast";
+import axios from "axios";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 const FoodDetails = () => {
   const food = useLoaderData();
-  console.log(food);
+  const { user } = useContext(AuthContext);
+  const loggedInUserEmail = user.email;
+
   const {
     _id,
     img,
@@ -17,32 +22,60 @@ const FoodDetails = () => {
     Quantity,
     location,
     Expired_Date,
+
     Additional_Notes,
     Status,
   } = food;
+  const currentDate = new Date();
 
-  //   ● Request Button
-  //   ● On clicking Request Button button a modal will open with following input field
-  //   ○ Food Name( Not editable )
-  //   ○ Food Image ( Not editable )
-  //   ○ Food Id (Not editable)
-  //   ○ Food Donator email ( Not editable )
-  //   ○ Food Donator Name(not editable)
-  //   ○ User email ( LoggedIn user , Not editable )
-  //   ○ Request Date(current time not editable)
-  //   ○ Pickup Location(not editable)
-  //   ○ Expire Date(not editable)
-  //   ○ Additional Notes (editable
-  //   ○ Donation Money(editable)
-  //   ○ Request Button
-  //   On clicking the Request Button will add the requested food into the database food
-  //   request collection
+  const currentHours = currentDate.getHours();
+  const currentMinutes = currentDate.getMinutes();
+  const currentSeconds = currentDate.getSeconds();
+  const year = currentDate.getFullYear();
+  const month = currentDate.getMonth() + 1;
+  const day = currentDate.getDate();
+  const formattedTime = `${currentHours}:${currentMinutes}:${currentSeconds}`;
+  const formattedDate = `${year}-${month.toString().padStart(2, "0")}-${day
+    .toString()
+    .padStart(2, "0")}`;
+
+  const RequestTime = formattedDate + "-" + formattedTime;
+
+  const handleRequest = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const Additional_Notes = form.Additional_Notes.value;
+    const Donation_Money = form.Donation_Money.value;
+    const RequestFood = {
+      img,
+      RequestTime,
+      userEmail,
+      userName,
+      userImage,
+      Food_Name,
+      Quantity,
+      location,
+      Expired_Date,
+      Additional_Notes,
+      Donation_Money,
+      Status,
+      loggedInUserEmail,
+    };
+    axios
+      .post("http://localhost:5000/requestFood", RequestFood)
+      .then((data) => {
+        console.log(data.data);
+        if (data.data.insertedId) {
+          toast.success("Food added successfully!!");
+        }
+      });
+  };
 
   return (
     <div className="min-h-[80vh] flex justify-center py-20 items-center">
-      <div className="flex gap-8 justify-center items-center">
+      <div className="flex gap-8 justify-center ">
         <div>
-          <img className="rounded-md" src={img} alt={Food_Name} />
+          <img className="rounded-md lg:w-[600px]" src={img} alt={Food_Name} />
         </div>
         <div>
           <h2 className="text-2xl my-2 font-bold">{Food_Name}</h2>
@@ -67,9 +100,65 @@ const FoodDetails = () => {
             {location}
           </h2>
 
-          <button className="px-8 py-2 mt-3 text-sm font-medium text-white bg-[#0CB14B] border border-[#0CB14B] rounded active:text-[#0CB14B] hover:bg-transparent hover:text-[#0CB14B] focus:outline-none">
-            Request
-          </button>
+          <div className="flex gap-3">
+            <label
+              htmlFor="my_modal_6"
+              className="px-8 py-2 mt-3 text-sm font-medium text-white bg-[#0CB14B] border border-[#0CB14B] rounded active:text-[#0CB14B] hover:bg-transparent hover:text-[#0CB14B] focus:outline-none"
+            >
+              Request
+            </label>
+
+            <input type="checkbox" id="my_modal_6" className="modal-toggle" />
+            <div className="modal ">
+              <div className="modal-box py-20 px-4">
+                <form onSubmit={handleRequest}>
+                  <label className="label">
+                    <span className="label-text text-lg text-[#403F3F] font-semibold">
+                      Additional Notes
+                    </span>
+                  </label>
+                  <input
+                    className="bg-[#f3f3f3] w-full pl-5 mb-5 py-4 rounded-md "
+                    type="text"
+                    name="Additional_Notes"
+                    defaultValue={Additional_Notes}
+                    placeholder="Additional Notes"
+                    id=""
+                  />
+                  <label className="label">
+                    <span className="label-text text-lg text-[#403F3F] font-semibold">
+                      Donation Money
+                    </span>
+                  </label>
+                  <input
+                    className="bg-[#f3f3f3] w-full pl-5 py-4 rounded-md "
+                    type="tel"
+                    name="Donation_Money"
+                    placeholder="Donation Money"
+                    id=""
+                    required
+                  />
+
+                  <div className="modal-action">
+                    <button className="px-8 py-2 mt-3 text-sm font-medium text-white bg-[#0CB14B] border border-[#0CB14B] rounded active:text-[#0CB14B] hover:bg-transparent hover:text-[#0CB14B] focus:outline-none">
+                      Request
+                    </button>
+                    <label
+                      htmlFor="my_modal_6"
+                      className="px-8 py-2 mt-3 text-sm font-medium text-white bg-[#0CB14B] border border-[#0CB14B] rounded active:text-[#0CB14B] hover:bg-transparent hover:text-[#0CB14B] focus:outline-none"
+                    >
+                      Close!
+                    </label>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <Link to="/availableFoods">
+              <button className="px-8 py-2 mt-3 text-sm font-medium text-white bg-[#0CB14B] border border-[#0CB14B] rounded active:text-[#0CB14B] hover:bg-transparent hover:text-[#0CB14B] focus:outline-none">
+                Back
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

@@ -8,6 +8,7 @@ import Home from "../Pages/Home/Home";
 import AvailableFoods from "../Componets/AvailableFoods/AvailableFoods";
 import FoodDetails from "../Pages/Home/FoodDetails";
 import AvailableFoodDetails from "../Componets/AvailableFoods/AvailableFoodDetails";
+import RequestFoods from "../Componets/RequestFoods/RequestFoods";
 
 const Routes = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const Routes = createBrowserRouter([
       {
         path: "/availableFoods",
         element: <AvailableFoods />,
+      },
+      {
+        path: "/foodRequest",
+        element: <RequestFoods />,
       },
       {
         path: "/addFood",
