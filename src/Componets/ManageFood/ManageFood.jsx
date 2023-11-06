@@ -4,8 +4,9 @@ import Axios from "axios";
 
 const ManageFood = () => {
   const { id } = useParams();
-  const [req, setReq] = useState([]);
+  const [requests, setRequests] = useState([]);
   const [foodItem, setFoodItem] = useState({});
+  const [filteredData, setFilteredData] = useState([]);
   useEffect(() => {
     // Fetch the food item by ID when the component mounts
     Axios.get(`http://localhost:5000/managefoods/${id}`)
@@ -21,16 +22,52 @@ const ManageFood = () => {
     fetch("http://localhost:5000/req")
       .then((res) => res.json())
       .then((data) => {
-        setReq(data);
+        setRequests(data);
       });
   }, []);
 
-  const filteredData = req?.filter((item) => {
-    return (
-      item.userEmail === foodItem.userEmail &&
-      item.Food_Name === foodItem.Food_Name
-    );
-  });
+  // const filteredData = requests?.filter((item) => {
+  //   return (
+  //     item.userEmail === foodItem.userEmail &&
+  //     item.Food_Name === foodItem.Food_Name
+  //   );
+  // });
+  useEffect(() => {
+    // Filter the data based on userEmail and Food_Name
+    const filteredData = requests?.filter((item) => {
+      return (
+        item.userEmail === foodItem?.userEmail &&
+        item.Food_Name === foodItem?.Food_Name
+      );
+    });
+    setFilteredData(filteredData);
+  }, [requests, foodItem]);
+
+  const handleRequestConfirm = (id) => {
+    fetch(`http://localhost:5000/requestfoods/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ Status: "Delivered" }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount > 0) {
+          const remaining = filteredData.filter(
+            (filterData) => filterData._id !== id
+          );
+          const updated = filteredData.find(
+            (filterData) => filterData._id === id
+          );
+          updated.status = "confirm";
+          const newUpdated = [updated, ...remaining];
+          setFilteredData(newUpdated);
+        }
+      });
+  };
+
   return (
     <div>
       <table className="table w-full">
@@ -46,13 +83,16 @@ const ManageFood = () => {
         <tbody className="">
           {filteredData && Array.isArray(filteredData) ? (
             filteredData.map((filterData) => (
-              <tr>
+              <tr key={filterData._id}>
                 <th>
                   {filterData.loggedInUserImage ? (
-                    filterData.loggedInUserImage
+                    <img
+                      className="w-[40px] rounded-[50%]"
+                      src={filterData.loggedInUserImage}
+                    ></img>
                   ) : (
                     <img
-                      className="w-[40px]"
+                      className="w-[40px] rounded-[50%]"
                       src="https://www.svgrepo.com/show/525577/user-circle.svg"
                     ></img>
                   )}
@@ -61,9 +101,18 @@ const ManageFood = () => {
                 <th>{filterData?.loggedInUserEmail}</th>
                 <th>{filterData?.RequestTime}</th>
                 <th>
-                  <button className="bg-green-500 py-2 px-4 text-white rounded">
-                    Pending
-                  </button>
+                  {filterData.Status === "Delivered" ? (
+                    <span className="bg-amber-300 py-2 px-4 text-white rounded">
+                      Delivered
+                    </span>
+                  ) : (
+                    <button
+                      onClick={() => handleRequestConfirm(filterData._id)}
+                      className="bg-green-500 py-2 px-4 text-white rounded"
+                    >
+                      Pending
+                    </button>
+                  )}
                 </th>
               </tr>
             ))

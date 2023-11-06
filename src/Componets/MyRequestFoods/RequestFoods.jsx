@@ -13,7 +13,6 @@ const RequestFoods = () => {
       .then((res) => res.json())
       .then((data) => setRequestFoods(data));
   }, [url]);
-  console.log(requestFoods);
 
   const handleDelete = (id) => {
     const proceed = true;
@@ -23,7 +22,6 @@ const RequestFoods = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
           if (data.deletedCount > 0) {
             toast.success("Requeued deleted successfully");
             const remaining = requestFoods.filter(
@@ -37,7 +35,6 @@ const RequestFoods = () => {
 
   return (
     <div>
-      <h3>RequestFoods :{requestFoods.length}</h3>
       <div className="overflow-x-auto w-full">
         <table className="table w-full">
           <thead className="py-7">

@@ -97,7 +97,6 @@ const ManageFoods = () => {
 
   return (
     <div>
-      <h2>{manageFoods.length}</h2>
       <div className="flex justify-center items-center bg-white py-20">
         <table
           {...table.getTableProps()}

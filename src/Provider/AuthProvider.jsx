@@ -63,7 +63,7 @@ const AuthProvider = ({ children }) => {
             withCredentials: true,
           })
           .then((res) => {
-            console.log("Token response", res.data);
+            console.log(res.data);
           });
       } else {
         axios
@@ -79,7 +79,6 @@ const AuthProvider = ({ children }) => {
       unSubscribe();
     };
   }, []);
-
   const authInfo = {
     createUser,
     signIn,

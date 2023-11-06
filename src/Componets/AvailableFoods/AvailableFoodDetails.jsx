@@ -12,6 +12,7 @@ const AvailableFoodDetails = () => {
   const { user } = useContext(AuthContext);
   const loggedInUserEmail = user?.email;
   const loggedInUserName = user?.displayName;
+  const loggedInUserImage = user?.photoURL;
 
   const {
     _id,
@@ -61,6 +62,7 @@ const AvailableFoodDetails = () => {
       Status,
       loggedInUserEmail,
       loggedInUserName,
+      loggedInUserImage,
     };
     axios
       .post("http://localhost:5000/requestFood", RequestFood)
