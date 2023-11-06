@@ -10,7 +10,8 @@ import axios from "axios";
 const AvailableFoodDetails = () => {
   const food = useLoaderData();
   const { user } = useContext(AuthContext);
-  const loggedInUserEmail = user.email;
+  const loggedInUserEmail = user?.email;
+  const loggedInUserName = user?.displayName;
 
   const {
     _id,
@@ -22,7 +23,6 @@ const AvailableFoodDetails = () => {
     Quantity,
     location,
     Expired_Date,
-
     Additional_Notes,
     Status,
   } = food;
@@ -60,6 +60,7 @@ const AvailableFoodDetails = () => {
       Donation_Money,
       Status,
       loggedInUserEmail,
+      loggedInUserName,
     };
     axios
       .post("http://localhost:5000/requestFood", RequestFood)

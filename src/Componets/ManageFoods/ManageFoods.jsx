@@ -41,9 +41,12 @@ const ManageFoods = () => {
                 Update
               </button>
             </Link>
-            <button className="inline-block px-6 py-3 text-sm font-medium text-white bg-[#ffc107] border border-[#ffc107] rounded active:text-[#ffc107] hover:bg-transparent hover:text-[#ffc107] focus:outline-none focus:ring focus:ring-[#ece8dc]">
-              Edit
-            </button>
+            <Link to={`/managefood/${row.original._id}`}>
+              <button className="inline-block px-6 py-3 text-sm font-medium text-white bg-[#ffc107] border border-[#ffc107] rounded active:text-[#ffc107] hover:bg-transparent hover:text-[#ffc107] focus:outline-none focus:ring focus:ring-[#ece8dc]">
+                Manage
+              </button>
+            </Link>
+
             <button
               className="inline-block px-8 py-3 text-sm font-medium text-white bg-[#ffc107] border border-[#ffc107] rounded active:text-[#ffc107] hover:bg-transparent hover:text-[#ffc107] focus:outline-none focus:ring focus:ring-[#ece8dc]"
               onClick={() => handleDelete(row.original._id)}

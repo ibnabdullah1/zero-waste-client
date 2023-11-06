@@ -11,6 +11,7 @@ const FoodDetails = () => {
   const food = useLoaderData();
   const { user } = useContext(AuthContext);
   const loggedInUserEmail = user.email;
+  const loggedInUserName = user?.displayName;
 
   const {
     _id,
@@ -60,6 +61,7 @@ const FoodDetails = () => {
       Donation_Money,
       Status,
       loggedInUserEmail,
+      loggedInUserName,
     };
     axios
       .post("http://localhost:5000/requestFood", RequestFood)
