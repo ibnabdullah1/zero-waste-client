@@ -8,15 +8,20 @@ import { Link } from "react-router-dom";
 const ManageFoods = () => {
   const { user } = useAuth();
   const [manageFoods, setManageFoods] = useState([]);
-  //   const axiosSecure = useAxiosSecure();
-  const url = `http://localhost:5000/managefoods?email=${user?.email}`;
-
+  const axiosSecure = useAxiosSecure();
+  // const url = `http://localhost:5000/managefoods?email=${user?.email}`;
+  const url = `/managefoods?email=${user?.email}`;
   useEffect(() => {
-    fetch(url, { credentials: "include" })
-      .then((res) => res.json())
-      .then((data) => setManageFoods(data));
-  }, [url]);
+    axiosSecure.get(url).then((res) => setManageFoods(res.data));
+  }, [axiosSecure, url]);
 
+  // useEffect(() => {
+  //   fetch(url, { credentials: "include" })
+  //     .then((res) => res.json())
+  //     .then((data) => setManageFoods(data));
+  // }, [url]);
+
+  console.log(manageFoods);
   const columns = React.useMemo(
     () => [
       {
