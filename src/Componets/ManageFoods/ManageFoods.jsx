@@ -35,20 +35,20 @@ const ManageFoods = () => {
         Header: "Actions",
         accessor: "actions",
         Cell: ({ row }) => (
-          <div className=" flex gap-3">
+          <div className=" md:flex gap-3">
             <Link to={`update/${row.original._id}`}>
-              <button className="inline-block px-8 py-3 text-sm font-medium text-white bg-[#ffc107] border border-[#ffc107] rounded active:text-[#ffc107] hover:bg-transparent hover:text-[#ffc107] focus:outline-none focus:ring focus:ring-[#ece8dc]">
+              <button className="inline-block md:mt-0 mt-1 px-8 py-3  text-sm font-medium text-white bg-[#ffc107] border border-[#ffc107] rounded active:text-[#ffc107] hover:bg-transparent hover:text-[#ffc107] focus:outline-none focus:ring focus:ring-[#ece8dc]">
                 Update
               </button>
             </Link>
             <Link to={`/managefood/${row.original._id}`}>
-              <button className="inline-block px-6 py-3 text-sm font-medium text-white bg-[#ffc107] border border-[#ffc107] rounded active:text-[#ffc107] hover:bg-transparent hover:text-[#ffc107] focus:outline-none focus:ring focus:ring-[#ece8dc]">
+              <button className="inline-block md:mt-0 mt-1  px-8 py-3 text-sm font-medium text-white bg-[#ffc107] border border-[#ffc107] rounded active:text-[#ffc107] hover:bg-transparent hover:text-[#ffc107] focus:outline-none focus:ring focus:ring-[#ece8dc]">
                 Manage
               </button>
             </Link>
 
             <button
-              className="inline-block px-8 py-3 text-sm font-medium text-white bg-[#ffc107] border border-[#ffc107] rounded active:text-[#ffc107] hover:bg-transparent hover:text-[#ffc107] focus:outline-none focus:ring focus:ring-[#ece8dc]"
+              className="inline-block px-8 md:mt-0 mt-1 py-3  text-sm font-medium text-white bg-[#ffc107] border border-[#ffc107] rounded active:text-[#ffc107] hover:bg-transparent hover:text-[#ffc107] focus:outline-none focus:ring focus:ring-[#ece8dc]"
               onClick={() => handleDelete(row.original._id)}
             >
               Delete
@@ -100,7 +100,7 @@ const ManageFoods = () => {
       <div className="flex justify-center items-center bg-white py-20">
         <table
           {...table.getTableProps()}
-          className="table lg:max-w-5xl mx-auto"
+          className="table w-full lg:max-w-5xl mx-auto"
         >
           <thead className="bg-white border">
             {table.headerGroups.map((headerGroup) => (

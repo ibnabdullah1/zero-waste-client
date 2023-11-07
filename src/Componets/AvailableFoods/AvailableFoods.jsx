@@ -63,8 +63,11 @@ const AvailableFoods = () => {
         Available Foods
       </h1>
 
-      <div className="search lg:my-10 flex justify-center my-5 mx-auto lg:w-[80%]">
-        <form className="lg:w-[70%]" onSubmit={handleSearch}>
+      <div className="search lg:my-10 md:flex px-4 md:px-0 justify-center my-5 mx-auto w-[100%] lg:w-[80%] md:w-[90%]">
+        <form
+          className="lg:w-[70%] md:w-[60%]  w-[80%]"
+          onSubmit={handleSearch}
+        >
           <label
             htmlFor="default-search"
             className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
@@ -104,7 +107,7 @@ const AvailableFoods = () => {
             </button>
           </div>
         </form>
-        <div className="ml-3 lg:w-[10%] ">
+        <div className="md:ml-3  md:mt-0 mt-3 lg:w-[10%] md:w-[10%] w-[20%] ">
           <select
             id="countries"
             className="py-4 px-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-[#ffc933]  focus:border-[#ffc933]"
@@ -137,7 +140,7 @@ const AvailableFoods = () => {
           ))}
         </div>
       ) : (
-        <div className="min-h-[60vh] flex justify-center">
+        <div className="min-h-[60vh] py-10 flex justify-center">
           <h2>
             {noData && (
               <div>

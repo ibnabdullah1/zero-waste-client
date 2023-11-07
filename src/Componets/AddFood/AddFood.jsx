@@ -38,7 +38,6 @@ const AddFood = () => {
     // });
 
     axios.post("http://localhost:5000/foods", newFood).then((data) => {
-      console.log(data);
       if (data.data.insertedId) {
         Swal.fire({
           title: "Success!",
@@ -51,7 +50,12 @@ const AddFood = () => {
   };
 
   return (
-    <div className="max-w-[800px] mx-auto mt-10 bg-white shadow-lg rounded-lg overflow-hidden">
+    <div
+      style={{
+        boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.06)",
+      }}
+      className="max-w-[800px] mx-auto my-10 bg-white rounded-lg overflow-hidden"
+    >
       <div className="text-2xl py-4 px-6 bg-[#ffc107] text-white text-center font-bold uppercase">
         Create a Food
       </div>

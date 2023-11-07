@@ -1,9 +1,9 @@
 import "./Banner.css";
 const Banner = () => {
   return (
-    <div className="bg-slate-50 py-20 lg:px-16">
-      <div className="flex justify-between items-center ">
-        <div className="">
+    <div className="bg-slate-50 py-20 px-10 lg:px-16">
+      <div className="md:flex justify-between items-center ">
+        <div className="mb-4">
           <h1 className="font-bold text-4xl mt-3  text-[#0CB14B] md:text-6xl ">
             FIND FOOD IN <br /> <span className="text-zinc-600">YOUR AREA</span>
           </h1>

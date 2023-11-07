@@ -16,7 +16,12 @@ const AvailableFoodCard = ({ availableFood }) => {
   } = availableFood;
 
   return (
-    <div className=" bg-white pb-4 rounded-xl ">
+    <div
+      style={{
+        boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.06)",
+      }}
+      className=" bg-white pb-4 rounded-xl "
+    >
       <div className="relative">
         <img className="rounded-t-xl" src={img} alt="" />
         <h2 className=" absolute top-3 left-3 bg-green-500 px-4 py-[2px] font-semibold text-white rounded-2xl">

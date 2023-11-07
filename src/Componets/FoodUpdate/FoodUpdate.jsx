@@ -64,7 +64,7 @@ const FoodUpdate = () => {
   return (
     <div className="max-w-[800px] mx-auto mt-10 bg-white shadow-lg rounded-lg overflow-hidden">
       <div className="text-2xl py-4 px-6 bg-[#ffc107] text-white text-center font-bold uppercase">
-        Create a Food
+        Update a Food
       </div>
       <form onSubmit={handleUpdateFood} className="py-4 px-6">
         <div className="mb-4">
@@ -188,7 +188,7 @@ const FoodUpdate = () => {
             className="bg-[#ffc107] font-bold text-white py-2 px-4 rounded hover:bg-[#e3ba3f] focus:outline-none focus:shadow-outline"
             type="submit"
           >
-            Added
+            Update
           </button>
         </div>
       </form>

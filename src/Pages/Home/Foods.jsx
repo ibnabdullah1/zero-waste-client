@@ -15,8 +15,9 @@ const Foods = () => {
 
   return (
     <div className="py-20">
-      <h2 className="text-4xl font-bold mt-8 mb-14 text-center">
-        Highest Quantity Foods
+      {/* <h2 className="text-4xl font-bold mt-8 mb-14 text-center"> */}
+      <h2 className="text-2xl  md:text-4xl  mt-8 mb-14  pl-3 w-[350px] mx-auto border-l-4  font-sans font-bold border-[#ffc933] dark:border-[#ffc933]   dark:text-gray-200">
+        Top Quantity Foods
       </h2>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 px-10">
         {Foods.length > 0 &&
