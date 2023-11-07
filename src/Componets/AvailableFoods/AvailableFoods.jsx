@@ -4,27 +4,41 @@ import axios from "axios";
 
 const AvailableFoods = () => {
   const [availableFoods, setAvailableFoods] = useState([]);
-  const [sortOrder, setSortOrder] = useState(""); // State to store the sorting order
+  const [sortOrder, setSortOrder] = useState("");
+  const [noData, setNoData] = useState("No data available");
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    setIsLoading(true);
     fetch("http://localhost:5000/foods")
       .then((res) => res.json())
       .then((data) => {
         setAvailableFoods(data);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setIsLoading(false);
+        setNoData();
       });
   }, []);
+
   const handleSearch = (e) => {
     e.preventDefault();
+    setIsLoading(true);
     fetch(`http://localhost:5000/searchFood/${e.target.name.value}`)
       .then((res) => res.json())
       .then((data) => {
+        setIsLoading(false);
         if (data) {
           setAvailableFoods(data);
         }
+      })
+      .catch((err) => {
+        console.log(err);
+        setIsLoading(false);
       });
-    from.reset();
   };
-
   const handleSortChange = (e) => {
     const selectedSortOrder = e.target.value;
     setSortOrder(selectedSortOrder);
@@ -39,6 +53,7 @@ const AvailableFoods = () => {
         (a, b) => new Date(a.Expired_Date) - new Date(b.Expired_Date)
       );
     }
+
     setAvailableFoods(sortedData);
   };
 
@@ -102,7 +117,17 @@ const AvailableFoods = () => {
         </div>
       </div>
 
-      {availableFoods.length > 0 ? (
+      {isLoading ? (
+        <div className="min-h-[60vh] flex justify-center">
+          <div>
+            <img
+              className="w-20 h-20 animate-spin"
+              src="https://www.svgrepo.com/show/448500/loading.svg"
+              alt="Loading icon"
+            />
+          </div>
+        </div>
+      ) : availableFoods.length > 0 ? (
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 px-10">
           {availableFoods.map((availableFood) => (
             <AvailableFoodCard
@@ -112,18 +137,22 @@ const AvailableFoods = () => {
           ))}
         </div>
       ) : (
-        <div className=" flex justify-center">
-          <div>
-            <img
-              className="w-[300px]"
-              src="https://www.carboncompassenterprises.com/assets/cmswebsite/images/no-items-found.svg"
-              alt=""
-            />
-            <h3 className="text-center">No customers found</h3>
-            <p className="text-center">
-              Try changing the filters or search term
-            </p>
-          </div>
+        <div className="min-h-[60vh] flex justify-center">
+          <h2>
+            {noData && (
+              <div>
+                <img
+                  className="w-[300px]"
+                  src="https://www.carboncompassenterprises.com/assets/cmswebsite/images/no-items-found.svg"
+                  alt=""
+                />
+                <h3 className="text-center">No customers found</h3>
+                <p className="text-center">
+                  Try changing the filters or search term
+                </p>
+              </div>
+            )}
+          </h2>
         </div>
       )}
     </div>

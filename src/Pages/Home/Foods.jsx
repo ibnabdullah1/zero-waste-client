@@ -14,7 +14,10 @@ const Foods = () => {
   }, []);
 
   return (
-    <div>
+    <div className="py-20">
+      <h2 className="text-4xl font-bold mt-8 mb-14 text-center">
+        Highest Quantity Foods
+      </h2>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 px-10">
         {Foods.length > 0 &&
           Foods.slice(0, 6).map((Food) => (
