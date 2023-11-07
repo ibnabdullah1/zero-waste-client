@@ -28,6 +28,7 @@ const Navbar = () => {
           Home
         </NavLink>
       </li>
+
       <li>
         <NavLink
           to="/availableFoods"
@@ -42,7 +43,6 @@ const Navbar = () => {
           Available Foods
         </NavLink>
       </li>
-
       <li>
         <NavLink
           to="/addFood"
@@ -57,6 +57,7 @@ const Navbar = () => {
           Add Food
         </NavLink>
       </li>
+
       <li>
         <NavLink
           to="/managefoods"

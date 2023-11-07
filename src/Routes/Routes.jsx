@@ -12,6 +12,7 @@ import ManageFoods from "../Componets/ManageFoods/ManageFoods";
 import FoodUpdate from "../Componets/FoodUpdate/FoodUpdate";
 import ManageFood from "../Componets/ManageFood/ManageFood";
 import RequestFoods from "../Componets/MyRequestFoods/RequestFoods";
+import PrivateRoute from "./PrivateRoutes";
 
 const Routes = createBrowserRouter([
   {
@@ -26,13 +27,22 @@ const Routes = createBrowserRouter([
 
       {
         path: "/highestQuantity/:id",
-        element: <FoodDetails />,
+        element: (
+          <PrivateRoute>
+            {" "}
+            <FoodDetails />
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/highestQuantity/${params.id}`),
       },
       {
         path: "/availableFoods/:id",
-        element: <AvailableFoodDetails />,
+        element: (
+          <PrivateRoute>
+            <AvailableFoodDetails />
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/foods/${params.id}`),
       },
@@ -43,25 +53,48 @@ const Routes = createBrowserRouter([
       },
       {
         path: "/managefoods",
-        element: <ManageFoods />,
+        element: (
+          <PrivateRoute>
+            {" "}
+            <ManageFoods />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/foodRequest",
-        element: <RequestFoods />,
+        element: (
+          <PrivateRoute>
+            <RequestFoods />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/managefoods/update/:_id",
-        element: <FoodUpdate />,
+        element: (
+          <PrivateRoute>
+            {" "}
+            <FoodUpdate />
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/managefoods/${params._id}`),
       },
       {
         path: "/addFood",
-        element: <AddFood />,
+        element: (
+          <PrivateRoute>
+            <AddFood />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/managefood/:id",
-        element: <ManageFood />,
+        element: (
+          <PrivateRoute>
+            {" "}
+            <ManageFood />
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/managefoods/${params.id}`),
       },

@@ -61,7 +61,7 @@ const ManageFood = () => {
           const updated = filteredData.find(
             (filterData) => filterData._id === id
           );
-          updated.status = "confirm";
+          updated.Status = "Delivered";
           const newUpdated = [updated, ...remaining];
           setFilteredData(newUpdated);
         }
@@ -69,7 +69,7 @@ const ManageFood = () => {
   };
 
   return (
-    <div>
+    <div className="min-h-[60vh]">
       <table className="table w-full">
         <thead className="py-7">
           <tr className="bg-zinc-800 text-[#ffc933] py-2">
