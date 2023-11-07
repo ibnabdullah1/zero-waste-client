@@ -15,14 +15,6 @@ const FoodsCard = ({ Food }) => {
     Status,
   } = Food;
 
-  //   Food Name
-  //   ● Donator Image & Name
-  //   ● Food Quantity
-  //   ● Pickup Location
-  //   ● Expired Date/Time
-  //   ● Additional Notes
-  //   ● View Details Button
-
   return (
     <div className="  bg-white pb-4 rounded-xl ">
       <div className="relative">

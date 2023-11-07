@@ -34,7 +34,7 @@ const RequestFoods = () => {
   };
 
   return (
-    <div>
+    <div className="min-h-[60vh]">
       <div className="overflow-x-auto w-full">
         <table className="table w-full">
           <thead className="py-7">
