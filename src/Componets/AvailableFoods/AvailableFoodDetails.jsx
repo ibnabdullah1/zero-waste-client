@@ -106,7 +106,7 @@ const AvailableFoodDetails = () => {
           <div className="flex gap-3">
             <label
               htmlFor="my_modal_6"
-              className="px-8 py-2 mt-3 text-sm font-medium text-white bg-[#0CB14B] border border-[#0CB14B] rounded active:text-[#0CB14B] hover:bg-transparent hover:text-[#0CB14B] focus:outline-none"
+              className="px-8 py-2 mt-3 text-sm font-medium text-white bg-[#ffc107] border border-[#ffc107] rounded active:text-[#ffc107] hover:bg-transparent hover:text-[#ffc107] focus:outline-none"
             >
               Request
             </label>
@@ -143,12 +143,12 @@ const AvailableFoodDetails = () => {
                   />
 
                   <div className="modal-action">
-                    <button className="px-8 py-2 mt-3 text-sm font-medium text-white bg-[#0CB14B] border border-[#0CB14B] rounded active:text-[#0CB14B] hover:bg-transparent hover:text-[#0CB14B] focus:outline-none">
+                    <button className="px-8 py-2 mt-3 text-sm font-medium text-white bg-[#ffc107] border border-[#ffc107] rounded active:text-[#ffc107] hover:bg-transparent hover:text-[#ffc107] focus:outline-none">
                       Request
                     </button>
                     <label
                       htmlFor="my_modal_6"
-                      className="px-8 py-2 mt-3 text-sm font-medium text-white bg-[#0CB14B] border border-[#0CB14B] rounded active:text-[#0CB14B] hover:bg-transparent hover:text-[#0CB14B] focus:outline-none"
+                      className="px-8 py-2 mt-3 text-sm font-medium text-white bg-[#ffc107] border border-[#ffc107] rounded active:text-[#ffc107] hover:bg-transparent hover:text-[#ffc107] focus:outline-none"
                     >
                       Close!
                     </label>
@@ -157,7 +157,7 @@ const AvailableFoodDetails = () => {
               </div>
             </div>
             <Link to="/availableFoods">
-              <button className="px-8 py-2 mt-3 text-sm font-medium text-white bg-[#0CB14B] border border-[#0CB14B] rounded active:text-[#0CB14B] hover:bg-transparent hover:text-[#0CB14B] focus:outline-none">
+              <button className="px-8 py-2 mt-3 text-sm font-medium text-white bg-[#ffc107] border border-[#ffc107] rounded active:text-[#ffc107] hover:bg-transparent hover:text-[#ffc107] focus:outline-none">
                 Back
               </button>
             </Link>

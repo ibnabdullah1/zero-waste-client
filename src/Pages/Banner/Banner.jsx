@@ -4,7 +4,7 @@ const Banner = () => {
     <div className="bg-slate-50 py-20 px-10 lg:px-16">
       <div className="md:flex justify-between items-center ">
         <div className="mb-4">
-          <h1 className="font-bold text-4xl mt-3  text-[#0CB14B] md:text-6xl ">
+          <h1 className="font-bold text-4xl mt-3  text-[#ffc107] md:text-6xl ">
             FIND FOOD IN <br /> <span className="text-zinc-600">YOUR AREA</span>
           </h1>
 
@@ -13,7 +13,7 @@ const Banner = () => {
             Partner Agency programs and sites.
           </p>
 
-          <button className="px-8 py-2 mt-3 text-sm font-medium text-white bg-[#0CB14B] border border-[#0CB14B] rounded active:text-[#0CB14B] hover:bg-transparent hover:text-[#0CB14B] focus:outline-none">
+          <button className="px-8 py-2 mt-3 text-sm font-medium text-white bg-[#ffc107] border border-[#ffc107] rounded active:text-[#ffc107] hover:bg-transparent hover:text-[#ffc107] focus:outline-none">
             Get Help
           </button>
         </div>

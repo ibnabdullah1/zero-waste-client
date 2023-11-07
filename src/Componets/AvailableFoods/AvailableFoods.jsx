@@ -131,7 +131,7 @@ const AvailableFoods = () => {
           </div>
         </div>
       ) : availableFoods.length > 0 ? (
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 px-10">
+        <div className="grid pb-20 pt-10 grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 px-10">
           {availableFoods.map((availableFood) => (
             <AvailableFoodCard
               key={availableFood._id}

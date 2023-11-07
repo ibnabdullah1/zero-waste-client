@@ -9,7 +9,6 @@ const ManageFoods = () => {
   const { user } = useAuth();
   const [manageFoods, setManageFoods] = useState([]);
   const axiosSecure = useAxiosSecure();
-  // const url = `http://localhost:5000/managefoods?email=${user?.email}`;
   const url = `/managefoods?email=${user?.email}`;
   useEffect(() => {
     axiosSecure.get(url).then((res) => setManageFoods(res.data));
@@ -21,7 +20,7 @@ const ManageFoods = () => {
   //     .then((data) => setManageFoods(data));
   // }, [url]);
 
-  console.log(manageFoods);
+  // console.log(manageFoods);
   const columns = React.useMemo(
     () => [
       {

@@ -8,7 +8,6 @@ const ManageFood = () => {
   const [foodItem, setFoodItem] = useState({});
   const [filteredData, setFilteredData] = useState([]);
   useEffect(() => {
-    // Fetch the food item by ID when the component mounts
     Axios.get(`http://localhost:5000/managefoods/${id}`)
       .then((response) => {
         setFoodItem(response.data);
@@ -26,14 +25,7 @@ const ManageFood = () => {
       });
   }, []);
 
-  // const filteredData = requests?.filter((item) => {
-  //   return (
-  //     item.userEmail === foodItem.userEmail &&
-  //     item.Food_Name === foodItem.Food_Name
-  //   );
-  // });
   useEffect(() => {
-    // Filter the data based on userEmail and Food_Name
     const filteredData = requests?.filter((item) => {
       return (
         item.userEmail === foodItem?.userEmail &&
