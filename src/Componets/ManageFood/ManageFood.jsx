@@ -7,6 +7,7 @@ const ManageFood = () => {
   const [requests, setRequests] = useState([]);
   const [foodItem, setFoodItem] = useState({});
   const [filteredData, setFilteredData] = useState([]);
+  const [update, setUpdate] = useState([]);
   useEffect(() => {
     Axios.get(`https://zero-waste-server.vercel.app/managefoods/${id}`)
       .then((response) => {
@@ -34,6 +35,27 @@ const ManageFood = () => {
     });
     setFilteredData(filteredData);
   }, [requests, foodItem]);
+
+  useEffect(() => {
+    fetch("https://zero-waste-server.vercel.app/requpdate")
+      .then((res) => res.json())
+      .then((data) => setUpdate(data));
+  }, []);
+  console.log(update);
+
+  const handleUpdate = (id) => {
+    fetch(`https://zero-waste-server.vercel.app/requpdate/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ Status: "Delivered" }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  };
 
   const handleRequestConfirm = (id) => {
     fetch(`https://zero-waste-server.vercel.app/requestfoods/${id}`, {
@@ -99,7 +121,10 @@ const ManageFood = () => {
                     </span>
                   ) : (
                     <button
-                      onClick={() => handleRequestConfirm(filterData._id)}
+                      onClick={() => {
+                        handleRequestConfirm(filterData._id);
+                        handleUpdate(id);
+                      }}
                       className="bg-green-500 py-2 px-4 text-white rounded"
                     >
                       Pending

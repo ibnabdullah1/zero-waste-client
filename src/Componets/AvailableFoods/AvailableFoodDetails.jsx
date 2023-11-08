@@ -102,15 +102,31 @@ const AvailableFoodDetails = () => {
             <span className="font-semibold">location:</span>
             {location}
           </h2>
+          {Status == "Delivered" ? (
+            <p className="text-red-500 font-semibold text-xl my-1">
+              No Available
+            </p>
+          ) : (
+            ""
+          )}
 
           <div className="flex gap-3">
-            <label
-              htmlFor="my_modal_6"
-              className="px-8 py-2 mt-3 text-sm font-medium text-white bg-[#ffc107] border border-[#ffc107] rounded active:text-[#ffc107] hover:bg-transparent hover:text-[#ffc107] focus:outline-none"
-            >
-              Request
-            </label>
-
+            {Status == "Delivered" ? (
+              <button
+                disabled
+                // className="btn"
+                className="px-8 py-2 mt-3 text-sm text-gray-400 rounded font-medium bg-[#D5D6D9]"
+              >
+                Request
+              </button>
+            ) : (
+              <label
+                htmlFor="my_modal_6"
+                className="px-8 py-2 mt-3 text-sm font-medium text-white bg-[#ffc107] border border-[#ffc107] rounded active:text-[#ffc107] hover:bg-transparent hover:text-[#ffc107] focus:outline-none"
+              >
+                Request
+              </label>
+            )}
             <input type="checkbox" id="my_modal_6" className="modal-toggle" />
             <div className="modal ">
               <div className="modal-box py-20 px-4">
