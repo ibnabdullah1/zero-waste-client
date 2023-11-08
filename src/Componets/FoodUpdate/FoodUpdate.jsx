@@ -62,7 +62,7 @@ const FoodUpdate = () => {
       });
   };
   return (
-    <div className="max-w-[800px] mx-auto mt-10 bg-white shadow-lg rounded-lg overflow-hidden">
+    <div className="max-w-[800px] md:px-8 py-10 md:mx-auto mx-4 mb-8 mt-10 bg-white shadow-lg rounded-lg overflow-hidden">
       <div className="text-2xl py-4 px-6 bg-[#ffc107] text-white text-center font-bold uppercase">
         Update a Food
       </div>

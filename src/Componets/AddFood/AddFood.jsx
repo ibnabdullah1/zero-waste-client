@@ -56,7 +56,7 @@ const AddFood = () => {
       style={{
         boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.06)",
       }}
-      className="max-w-[800px] mx-auto my-10 bg-white rounded-lg overflow-hidden"
+      className="max-w-[800px] px-8 py-10 md:mx-auto my-10 mx-4 bg-white rounded-lg overflow-hidden"
     >
       <div className="text-2xl py-4 px-6 bg-[#ffc107] text-white text-center font-bold uppercase">
         Create a Food
