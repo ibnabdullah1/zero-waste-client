@@ -34,7 +34,9 @@ const Routes = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/highestQuantity/${params.id}`),
+          fetch(
+            `https://zero-waste-server.vercel.app/highestQuantity/${params.id}`
+          ),
       },
       {
         path: "/availableFoods/:id",
@@ -44,7 +46,7 @@ const Routes = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/foods/${params.id}`),
+          fetch(`https://zero-waste-server.vercel.app/foods/${params.id}`),
       },
 
       {
@@ -77,7 +79,9 @@ const Routes = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/managefoods/${params._id}`),
+          fetch(
+            `https://zero-waste-server.vercel.app/managefoods/${params._id}`
+          ),
       },
       {
         path: "/addFood",
@@ -96,7 +100,9 @@ const Routes = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/managefoods/${params.id}`),
+          fetch(
+            `https://zero-waste-server.vercel.app/managefoods/${params.id}`
+          ),
       },
 
       {

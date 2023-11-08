@@ -86,8 +86,8 @@ function Reviews() {
         autoPlaySpeed={4000}
         isRTL={true}
       >
-        {sliderData.map((item) => (
-          <div key={item.id} className="slider-item text-center">
+        {sliderData.map((item, index) => (
+          <div key={index} className="slider-item text-center">
             <div className="flex justify-center mb-3">
               <img
                 className="w-[50px] h-[50px] rounded-[50%]"

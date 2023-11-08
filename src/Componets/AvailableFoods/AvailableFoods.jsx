@@ -10,7 +10,7 @@ const AvailableFoods = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch("http://localhost:5000/foods")
+    fetch("https://zero-waste-server.vercel.app/foods")
       .then((res) => res.json())
       .then((data) => {
         setAvailableFoods(data);
@@ -26,7 +26,9 @@ const AvailableFoods = () => {
   const handleSearch = (e) => {
     e.preventDefault();
     setIsLoading(true);
-    fetch(`http://localhost:5000/searchFood/${e.target.name.value}`)
+    fetch(
+      `https://zero-waste-server.vercel.app/searchFood/${e.target.name.value}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setIsLoading(false);

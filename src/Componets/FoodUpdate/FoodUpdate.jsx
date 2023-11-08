@@ -41,7 +41,7 @@ const FoodUpdate = () => {
     };
     console.log(UpdateFood);
 
-    fetch(`http://localhost:5000/managefoods/${_id}`, {
+    fetch(`https://zero-waste-server.vercel.app/managefoods/${_id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

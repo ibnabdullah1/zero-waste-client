@@ -65,7 +65,7 @@ const AvailableFoodDetails = () => {
       loggedInUserImage,
     };
     axios
-      .post("http://localhost:5000/requestFood", RequestFood)
+      .post("https://zero-waste-server.vercel.app/requestFood", RequestFood)
       .then((data) => {
         console.log(data.data);
         if (data.data.insertedId) {

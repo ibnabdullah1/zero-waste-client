@@ -8,7 +8,7 @@ const ManageFood = () => {
   const [foodItem, setFoodItem] = useState({});
   const [filteredData, setFilteredData] = useState([]);
   useEffect(() => {
-    Axios.get(`http://localhost:5000/managefoods/${id}`)
+    Axios.get(`https://zero-waste-server.vercel.app/managefoods/${id}`)
       .then((response) => {
         setFoodItem(response.data);
       })
@@ -18,7 +18,7 @@ const ManageFood = () => {
   }, [id]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/req")
+    fetch("https://zero-waste-server.vercel.app/req")
       .then((res) => res.json())
       .then((data) => {
         setRequests(data);
@@ -36,7 +36,7 @@ const ManageFood = () => {
   }, [requests, foodItem]);
 
   const handleRequestConfirm = (id) => {
-    fetch(`http://localhost:5000/requestfoods/${id}`, {
+    fetch(`https://zero-waste-server.vercel.app/requestfoods/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

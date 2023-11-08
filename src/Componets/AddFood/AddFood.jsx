@@ -33,20 +33,22 @@ const AddFood = () => {
     };
     // console.log(newFood);
 
-    // axios.post("http://localhost:5000/foods", newFood).then((res) => {
+    // axios.post("https://zero-waste-server.vercel.app/foods", newFood).then((res) => {
     //   console.log(res.data);
     // });
 
-    axios.post("http://localhost:5000/foods", newFood).then((data) => {
-      if (data.data.insertedId) {
-        Swal.fire({
-          title: "Success!",
-          text: "Food Added Successfully",
-          icon: "success",
-          confirmButtonText: "Ok",
-        });
-      }
-    });
+    axios
+      .post("https://zero-waste-server.vercel.app/foods", newFood)
+      .then((data) => {
+        if (data.data.insertedId) {
+          Swal.fire({
+            title: "Success!",
+            text: "Food Added Successfully",
+            icon: "success",
+            confirmButtonText: "Ok",
+          });
+        }
+      });
   };
 
   return (

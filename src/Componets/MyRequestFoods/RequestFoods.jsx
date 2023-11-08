@@ -6,7 +6,7 @@ import toast from "react-hot-toast";
 const RequestFoods = () => {
   const { user } = useAuth();
   const [requestFoods, setRequestFoods] = useState([]);
-  const url = `http://localhost:5000/requestfoods?email=${user?.email}`;
+  const url = `https://zero-waste-server.vercel.app/requestfoods?email=${user?.email}`;
 
   useEffect(() => {
     fetch(url, { credentials: "include" })
@@ -17,7 +17,7 @@ const RequestFoods = () => {
   const handleDelete = (id) => {
     const proceed = true;
     if (proceed) {
-      fetch(`http://localhost:5000/requestfoods/${id}`, {
+      fetch(`https://zero-waste-server.vercel.app/requestfoods/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

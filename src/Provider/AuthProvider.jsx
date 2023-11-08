@@ -59,7 +59,7 @@ const AuthProvider = ({ children }) => {
       setLoading(false);
       if (currentUser) {
         axios
-          .post("http://localhost:5000/jwt", loggedInUser, {
+          .post("https://zero-waste-server.vercel.app/jwt", loggedInUser, {
             withCredentials: true,
           })
           .then((res) => {
@@ -67,7 +67,7 @@ const AuthProvider = ({ children }) => {
           });
       } else {
         axios
-          .post("http://localhost:5000/logout", loggedInUser, {
+          .post("https://zero-waste-server.vercel.app/logout", loggedInUser, {
             withCredentials: true,
           })
           .then((res) => {
