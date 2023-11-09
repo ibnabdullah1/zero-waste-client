@@ -3,6 +3,7 @@ import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import toast from "react-hot-toast";
 import useAuth from "../../Hooks/useAuth";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -42,6 +43,9 @@ const Login = () => {
 
   return (
     <div className="bg-[#f3f3f3] min-h-screen ">
+      <Helmet>
+        <title>Zero-Waste.bd/Login</title>
+      </Helmet>
       <div className="py-20">
         <div className="max-w-[500px] mx-auto bg-white py-10  px-10 ">
           <h1 className="text-3xl font-bold text-center mb-4">

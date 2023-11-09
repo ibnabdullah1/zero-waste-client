@@ -7,6 +7,7 @@ import toast from "react-hot-toast";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import axios from "axios";
+import { Helmet } from "react-helmet-async";
 const AvailableFoodDetails = () => {
   const food = useLoaderData();
   const { user } = useContext(AuthContext);
@@ -76,6 +77,9 @@ const AvailableFoodDetails = () => {
 
   return (
     <div className="min-h-[80vh] flex justify-center py-20 items-center">
+      <Helmet>
+        <title>Zero-Waste.bd/FoodDetails</title>
+      </Helmet>
       <div className="lg:flex gap-8 justify-center  px-7 ">
         <div>
           <img className="rounded-md lg:w-[600px]" src={img} alt={Food_Name} />

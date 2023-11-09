@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import useAuth from "../../Hooks/useAuth";
 import RequestFoodsCard from "./RequestFoodsCard";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
 const RequestFoods = () => {
   const { user } = useAuth();
@@ -40,6 +41,9 @@ const RequestFoods = () => {
 
   return (
     <div className="min-h-[60vh]">
+      <Helmet>
+        <title>Zero-Waste.bd/RequestFoods</title>
+      </Helmet>
       <div className="overflow-x-auto w-full">
         <table className="table w-full">
           <thead className="py-7">

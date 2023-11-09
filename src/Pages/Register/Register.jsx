@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 const Register = () => {
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -43,6 +44,9 @@ const Register = () => {
 
   return (
     <div className="bg-[#f3f3f3] min-h-screen ">
+      <Helmet>
+        <title>Zero-Waste.bd/Register</title>
+      </Helmet>
       <div className="py-20">
         <div className="max-w-lg mx-auto bg-white py-24 px-10 ">
           <h1 className="text-3xl font-bold text-center mb-10">

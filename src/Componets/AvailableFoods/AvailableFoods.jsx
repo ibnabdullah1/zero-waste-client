@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import AvailableFoodCard from "./availableFoodCard";
 import axios from "axios";
+import { Helmet } from "react-helmet-async";
 
 const AvailableFoods = () => {
   const [availableFoods, setAvailableFoods] = useState([]);
@@ -61,6 +62,9 @@ const AvailableFoods = () => {
 
   return (
     <div className="py-20">
+      <Helmet>
+        <title>Zero-Waste.bd/AvailableFoods</title>
+      </Helmet>
       <h2 className="text-2xl   md:text-4xl w-[210px]  mt-8 mb-14  pl-3  md:w-[300px] mx-auto border-l-4  font-sans font-bold border-[#ffc933]    ">
         Available Foods
       </h2>

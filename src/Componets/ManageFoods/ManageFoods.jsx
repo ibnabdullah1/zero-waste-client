@@ -4,6 +4,7 @@ import useAuth from "../../Hooks/useAuth";
 import { useTable } from "react-table";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const ManageFoods = () => {
   const { user } = useAuth();
@@ -101,6 +102,9 @@ const ManageFoods = () => {
 
   return (
     <div className="overflow-x-auto w-full">
+      <Helmet>
+        <title>Zero-Waste.bd/ManageFoods</title>
+      </Helmet>
       <div className="flex justify-center items-center bg-white py-20">
         <table
           {...table.getTableProps()}

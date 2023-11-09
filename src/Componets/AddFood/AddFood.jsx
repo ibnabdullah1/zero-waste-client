@@ -3,6 +3,7 @@ import Swal from "sweetalert2";
 import auth from "../../Firebase/firebase.config";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 const AddFood = () => {
   const { user } = useContext(AuthContext);
@@ -58,6 +59,9 @@ const AddFood = () => {
       }}
       className="max-w-[800px] px-8 py-10 md:mx-auto my-10 mx-4 bg-white rounded-lg overflow-hidden"
     >
+      <Helmet>
+        <title>Zero-Waste.bd/AddFood</title>
+      </Helmet>
       <div className="text-2xl py-4 px-6 bg-[#ffc107] text-white text-center font-bold uppercase">
         Create a Food
       </div>

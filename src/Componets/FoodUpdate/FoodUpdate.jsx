@@ -1,5 +1,6 @@
 import Swal from "sweetalert2";
 import { useLoaderData, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 const FoodUpdate = () => {
   const Food = useLoaderData();
   console.log(Food);
@@ -63,6 +64,9 @@ const FoodUpdate = () => {
   };
   return (
     <div className="max-w-[800px] md:px-8 py-10 md:mx-auto mx-4 mb-8 mt-10 bg-white shadow-lg rounded-lg overflow-hidden">
+      <Helmet>
+        <title>Zero-Waste.bd/ManageFoods/Update</title>
+      </Helmet>
       <div className="text-2xl py-4 px-6 bg-[#ffc107] text-white text-center font-bold uppercase">
         Update a Food
       </div>
