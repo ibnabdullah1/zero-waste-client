@@ -41,7 +41,7 @@ const ManageFood = () => {
       .then((res) => res.json())
       .then((data) => setUpdate(data));
   }, []);
-  console.log(update);
+  // console.log(update);
 
   const handleUpdate = (id) => {
     fetch(`https://zero-waste-server.vercel.app/requpdate/${id}`, {

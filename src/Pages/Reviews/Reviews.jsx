@@ -76,8 +76,8 @@ const sliderData = [
 function Reviews() {
   return (
     <div className="max-w-4xl mx-auto py-20 px-10">
-      <h2 className="text-2xl  md:text-3xl  pl-3 w-[280px] mx-auto border-l-4  font-sans mb-10 font-bold border-[#ffc933] dark:border-[#ffc933]   dark:text-gray-200">
-        Customer Review
+      <h2 className="text-2xl  md:text-3xl  pl-3 w-[120px] mx-auto border-l-4  font-sans mb-10 font-bold border-[#ffc933]  dark:border-[#ffc933]   dark:text-gray-200">
+        Review
       </h2>
 
       <Carousel

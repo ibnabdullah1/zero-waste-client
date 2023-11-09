@@ -21,14 +21,14 @@ const Blogs = () => {
                 <div class="absolute inset-0 bg-black opacity-40 rounded-md"></div>
                 <div>
                   <p className="p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">
-                    12 April 2021
+                    19 June 2023
                   </p>
-                  <div className="absolute bottom-0 left-0 p-6">
+                  <div className="absolute bottom-0 left-0 p-3">
                     <h2 className="text-xl font-semibold 5 text-white">
-                      The Decorated Ways
+                      Delicious Homemade..
                     </h2>
                     <p className="text-base leading-4 text-white mt-2">
-                      Dive into minimalism
+                      Learn how to make mouthwatering ...
                     </p>
                     <a
                       href="javascript:void(0)"
@@ -66,14 +66,14 @@ const Blogs = () => {
                 <div class="absolute inset-0 bg-black opacity-40 rounded-md"></div>
                 <div>
                   <p className="p-4 text-xs font-medium leading-3 text-white absolute top-0 right-0">
-                    12 April 2023
+                    05 Nov 2023
                   </p>
-                  <div className="absolute bottom-0 left-0 p-4">
+                  <div className="absolute bottom-0 left-0 p-3">
                     <h2 className="text-xl font-semibold 5 text-white">
-                      The Decorated Ways
+                      Top 10 BBQ Recipes....
                     </h2>
                     <p className="text-base leading-4 text-white mt-2">
-                      Dive into minimalism
+                      Fire up the grill and try out these amazing BBQ recipes..
                     </p>
                     <a
                       href="javascript:void(0)"
@@ -112,14 +112,16 @@ const Blogs = () => {
               <div class="absolute inset-0 bg-black opacity-40 rounded-md"></div>
               <div>
                 <p className="md:p-10 p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">
-                  12 April 2021
+                  12 April 2023
                 </p>
-                <div className="absolute bottom-0 left-0 md:p-10 p-6">
+                <div className="absolute bottom-0 left-0 md:p-7 p-6">
                   <h2 className="text-xl font-semibold 5 text-white">
-                    The Decorated Ways
+                    Exploring Authentic Thai Cuisine
                   </h2>
                   <p className="text-base leading-4 text-white mt-2">
-                    Dive into minimalism
+                    Take a culinary journey to Thailand with our guide to
+                    authentic Thai dishes, including Tom Yum soup, Pad Thai, and
+                    Green Curry.
                   </p>
                   <a
                     href="javascript:void(0)"
@@ -163,15 +165,16 @@ const Blogs = () => {
             <div className="relative">
               <div class="absolute inset-0 bg-black opacity-40 rounded-md"></div>
               <div>
-                <p className="md:p-10 p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">
-                  12 April 2021
+                <p className="md:p-7 p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">
+                  27 April 2023
                 </p>
                 <div className="absolute bottom-0 left-0 md:p-10 p-6">
                   <h2 className="text-xl font-semibold 5 text-white">
-                    The Decorated Ways
+                    Farm-to-Table Dining: A Sustainable Experience
                   </h2>
                   <p className="text-base leading-4 text-white mt-2">
-                    Dive into minimalism
+                    Discover the joys of farm-to-table dining and how it
+                    benefits both your taste buds and the environment.
                   </p>
                   <a
                     href="javascript:void(0)"
@@ -217,12 +220,13 @@ const Blogs = () => {
                   <p className="p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">
                     12 April 2021
                   </p>
-                  <div className="absolute bottom-0 left-0 p-6">
+                  <div className="absolute bottom-0 left-0 p-3">
                     <h2 className="text-xl font-semibold 5 text-white">
-                      The Decorated Ways
+                      The Art of Sushi Making
                     </h2>
                     <p className="text-base leading-4 text-white mt-2">
-                      Dive into minimalism
+                      Learn the art of sushi making with our sushi chef's tips
+                      and tricks.
                     </p>
                     <a
                       href="javascript:void(0)"
@@ -260,14 +264,15 @@ const Blogs = () => {
                 <div class="absolute inset-0 bg-black opacity-40 rounded-md"></div>
                 <div>
                   <p className="p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">
-                    12 April 2021
+                    12 Sep 2021
                   </p>
-                  <div className="absolute bottom-0 left-0 p-6">
+                  <div className="absolute bottom-0 left-0 p-3">
                     <h2 className="text-xl font-semibold 5 text-white">
-                      The Decorated Ways
+                      The Art of Baking...
                     </h2>
                     <p className="text-base leading-4 text-white mt-2">
-                      Dive into minimalism
+                      Master the art of creating flaky and buttery croissants
+                      with our step-by-step baking guide.
                     </p>
                     <a
                       href="javascript:void(0)"

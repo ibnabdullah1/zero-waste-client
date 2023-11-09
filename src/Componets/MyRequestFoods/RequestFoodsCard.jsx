@@ -3,6 +3,7 @@ import { RxCross1 } from "react-icons/rx";
 const RequestFoodsCard = ({ requestFood, handleDelete }) => {
   const {
     _id,
+    Food_Name,
     RequestTime,
     userName,
     location,
@@ -14,6 +15,7 @@ const RequestFoodsCard = ({ requestFood, handleDelete }) => {
     <tr className=" bg-zinc-700 text-white">
       <td>{userName}</td>
       <td>{location}</td>
+      <td>{Food_Name}</td>
       <td>{Expired_Date}</td>
       <td>{RequestTime}</td>
       <td>{Donation_Money} tk</td>

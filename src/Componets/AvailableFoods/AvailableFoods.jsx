@@ -60,16 +60,13 @@ const AvailableFoods = () => {
   };
 
   return (
-    <div>
-      <h1 className="text-xl text-center lg:my-10 my-5 lg:text-4xl  font-semibold">
+    <div className="py-20">
+      <h2 className="text-2xl   md:text-4xl w-[210px]  mt-8 mb-14  pl-3  md:w-[300px] mx-auto border-l-4  font-sans font-bold border-[#ffc933]    ">
         Available Foods
-      </h1>
+      </h2>
 
-      <div className="search lg:my-10 md:flex px-4 md:px-0 justify-center my-5 mx-auto w-[100%] lg:w-[80%] md:w-[90%]">
-        <form
-          className="lg:w-[70%] md:w-[60%]  w-[80%]"
-          onSubmit={handleSearch}
-        >
+      <div className="search lg:my-10 md:flex px-4 md:px-0 justify-center my-5 mx-auto w-[100%] lg:w-[80%] md:w-[100%] ">
+        <form className="lg:w-[70%] md:w-[68%] w-[80%]" onSubmit={handleSearch}>
           <label
             htmlFor="default-search"
             className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
@@ -109,7 +106,7 @@ const AvailableFoods = () => {
             </button>
           </div>
         </form>
-        <div className="md:ml-3  md:mt-0 mt-3 lg:w-[10%] md:w-[10%] w-[20%] ">
+        <div className="md:ml-3  md:mt-0 mt-3 lg:w-[10%] md:w-[28%] w-[20%] ">
           <select
             id="countries"
             className="py-4 px-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-[#ffc933]  focus:border-[#ffc933]"
@@ -126,7 +123,7 @@ const AvailableFoods = () => {
         <div className="min-h-[60vh] flex justify-center">
           <div>
             <img
-              className="w-20 h-20 animate-spin"
+              className="w-14 h-14 animate-spin"
               src="https://www.svgrepo.com/show/448500/loading.svg"
               alt="Loading icon"
             />

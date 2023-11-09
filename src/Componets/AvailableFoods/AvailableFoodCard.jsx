@@ -24,9 +24,15 @@ const AvailableFoodCard = ({ availableFood }) => {
     >
       <div className="relative">
         <img className="rounded-t-xl" src={img} alt="" />
-        <h2 className=" absolute top-4 right-4 bg-white px-4 py-[2px] font-semibold text-black rounded-2xl">
-          {Status}
-        </h2>
+        {Status === "available" ? (
+          <h2 className=" absolute top-4 right-4 bg-green-500 px-4 py-[2px] font-semibold text-white rounded-2xl">
+            {Status}
+          </h2>
+        ) : (
+          <h2 className=" absolute top-4 right-4 bg-[#ffc933] px-4 py-[2px] font-semibold text-white rounded-2xl">
+            {Status}
+          </h2>
+        )}
       </div>
       <div className="px-4">
         <h2 className="text-xl my-2 font-bold">{Food_Name}</h2>

@@ -7,7 +7,7 @@ const Foods = () => {
   const { Foods, isLoading } = useFoods();
   return (
     <div className="py-20">
-      <h2 className="text-2xl  md:text-4xl  mt-8 mb-14  pl-3 w-[350px] mx-auto border-l-4  font-sans font-bold border-[#ffc933] dark:border-[#ffc933]   dark:text-gray-200">
+      <h2 className="text-2xl  md:text-4xl w-[250px]  mt-8 mb-14  pl-3  md:w-[350px] mx-auto border-l-4  font-sans font-bold border-[#ffc933] dark:border-[#ffc933]   dark:text-gray-200">
         Top Quantity Foods
       </h2>
 

@@ -100,13 +100,13 @@ const ManageFoods = () => {
   };
 
   return (
-    <div>
+    <div className="overflow-x-auto w-full">
       <div className="flex justify-center items-center bg-white py-20">
         <table
           {...table.getTableProps()}
           className="table w-full lg:max-w-5xl mx-auto"
         >
-          <thead className="bg-white border">
+          <thead className="bg-gray-200">
             {table.headerGroups.map((headerGroup) => (
               <tr {...headerGroup.getHeaderGroupProps()}>
                 {headerGroup.headers.map((column) => (
